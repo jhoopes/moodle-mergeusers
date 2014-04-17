@@ -44,6 +44,7 @@ return array(
         'user_preferences',
         'user_private_key',
         'user_info_data',
+        'quiz_grades', 'quiz_grades_history', // this is handled by custom processing of quiz attempts
     ),
 
     // List of compound indexes.
@@ -77,6 +78,11 @@ return array(
         'role_assignments' => array(
             'userfield' => 'userid',
             'otherfields' => array('contextid', 'roleid'),
+        ),
+        'quiz_attempts' => array(
+            'userfield' => 'userid',
+            'otherfields' => array('quiz'),
+            'customprocessing' => true,
         ),
     ),
 
